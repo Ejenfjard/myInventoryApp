@@ -1,0 +1,73 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 90px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 50vh;
+}
+
+.formField {
+    margin-bottom: 15px;
+}
+
+.formField label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formField input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.registerLink {
+    color: #121920;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.registerLink:hover {
+    color: #005bb5;
+    text-decoration: underline;
+}
+
+.submitButton {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submitButton:hover {
+    background-color: #005bb5;
+}
+
+.buttonField {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: green;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}

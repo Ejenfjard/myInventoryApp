@@ -1,0 +1,9 @@
+.itemList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item {
+    background-color: aqua;
+}

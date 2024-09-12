@@ -1,0 +1,48 @@
+.header {
+    margin-bottom: 0;
+    /* Sätt till 0 om det finns en margin som skapar mellanrum */
+    padding: 0;
+    width: 100%;
+    /* Se till att headern tar upp hela bredden */
+    display: flex;
+    justify-content: space-between;
+    /* Justera innehållet om du behöver */
+    align-items: center;
+    /* Vertikalt centrera innehållet */
+}
+
+.logo a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+.companyName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+
+}
+
+.logoAndName {
+    display: flex;
+    align-items: center;
+
+}
+
+
+.logoutButton {
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 60px;
+
+
+}
+
+.logoutButton:hover {
+    background-color: #005bb5;
+}

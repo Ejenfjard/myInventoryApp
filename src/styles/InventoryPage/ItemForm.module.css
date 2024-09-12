@@ -1,0 +1,93 @@
+.itemForm {
+    border: 2px solid black;
+    width: 50%;
+
+
+}
+
+.formRow {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    justify-content: space-evenly;
+    gap: 50px;
+
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Avstånd mellan fälten i inputGroup */
+    flex: 1;
+    /* Ta upp tillgängligt utrymme */
+}
+
+.formGroup select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.descriptionGroup {
+    flex: 2;
+    /* Ge mer utrymme till beskrivningen än inputGroup */
+}
+
+.descriptionGroup textarea {
+    width: 100%;
+    /* Tar upp hela förälderns bredd */
+    max-width: 100%;
+    height: 150px;
+    /* Lite extra padding för användarvänlighet */
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    resize: none;
+    /* Förhindrar att användaren manuellt ändrar storlek */
+}
+
+
+
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.saveButton {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    background-color: #005bb5;
+}
