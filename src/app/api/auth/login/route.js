@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { compare } from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 import { PrismaClient } from "@prisma/client";
 import { signJWT } from "../../../../../utils/helpers/authHelpers";
 

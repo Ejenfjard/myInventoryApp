@@ -28,10 +28,10 @@ const InventoryPage = () => {
         // Fetch user data from localStorage or an API
         const token = localStorage.getItem('token');
         if (token) {
-            setUser({ name: 'John Doe' }); // Simulate user data for now
+            setUser({ name: 'John Doe' }); 
         }
 
-        // Fetch items when the component loads
+        
         fetchItems();
     }, []);
 
@@ -44,8 +44,8 @@ const InventoryPage = () => {
 
 
     const handleSaveItem = async (item) => {
-        const token = localStorage.getItem('token'); // Hämta token från localStorage
-        console.log("Token från localStorage:", token); // Logga token för att kontrollera
+        const token = localStorage.getItem('token'); 
+        console.log("Token från localStorage:", token); 
 
         try {
             if (item.id) {
@@ -70,7 +70,7 @@ const InventoryPage = () => {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}` // Lägg till token i Authorization-headern
+                        'Authorization': `Bearer ${token}`
                     },
                     body: JSON.stringify(item),
                 });
@@ -92,15 +92,15 @@ const InventoryPage = () => {
     };
 
     const handleDelete = async (id) => {
-        const token = localStorage.getItem('token'); // Hämta token från localStorage
-        console.log("Token från localStorage:", token); // Logga token för att kontrollera
+        const token = localStorage.getItem('token'); 
+        console.log("Token från localStorage:", token); 
 
         try {
             const response = await fetch(`/api/items/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // Lägg till token i Authorization-headern
+                    'Authorization': `Bearer ${token}` 
                 },
             });
 
