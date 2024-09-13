@@ -1,9 +1,95 @@
 .itemList {
+    padding: 0;
+    list-style: none;
+    /* Ta bort standardpunkter eller nummer från listan */
+}
+
+
+
+.headerRow {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+
+    box-sizing: border-box;
+    /* Säkerställer att padding och border ingår i bredden */
+}
+
+.headerRow span {
+    /* Säkerställer att varje kolumn får rätt utrymme */
+    flex: 1;
+
+}
+
+.headerRow .nameHeader {
+    flex: 0 1 25%;
+}
+
+.headerRow .quantityHeader {
+    flex: 0 1 15%;
+}
+
+.headerRow .categoryHeader {
+    flex: 0 1 20%;
+}
+
+.headerRow .descriptionHeader {
+    flex: 0 1 35%;
 }
 
 .item {
-    background-color: aqua;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.itemDetails {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.itemName {
+    flex: 0 1 25%;
+    /* Kan minskas men tar 25% om det finns tillräckligt med utrymme */
+    padding: 0 10px;
+    min-width: 80px;
+    /* Justera efter behov */
+}
+
+.itemQuantity {
+    flex: 0 1 15%;
+    /* Kan minskas men tar 15% om det finns tillräckligt med utrymme */
+    padding: 0 10px;
+    min-width: 50px;
+    /* Justera efter behov */
+}
+
+.itemCategory {
+    flex: 0 1 20%;
+    /* Kan minskas men tar 20% om det finns tillräckligt med utrymme */
+    padding: 0 10px;
+    min-width: 60px;
+    /* Justera efter behov */
+}
+
+.itemDescription {
+    flex: 1;
+    /* Växer för att fylla tillgängligt utrymme */
+    padding: 0 10px;
+    margin-left: 5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.itemActions {
+    display: flex;
+    gap: 10px;
 }

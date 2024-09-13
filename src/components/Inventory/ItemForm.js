@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from '@/styles/InventoryPage/ItemForm.module.css';
 
 
@@ -10,6 +11,18 @@ const ItemForm = ({ onSave, item = null }) => {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState(categories[0]);
 
+    const router = useRouter();
+
+
+    const checkTokenAndAlert = () => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            if (confirm('You must be logged in to add or edit an item. Click OK to go to the login page.')) {
+                router.push('/login'); // Navigera användaren till inloggningssidan
+            }
+        }
+    };
+
     // Använd useEffect för att uppdatera tillståndet när item ändras
     useEffect(() => {
         setName(item?.name || '');
@@ -19,14 +32,28 @@ const ItemForm = ({ onSave, item = null }) => {
 
     }, [item]);
 
+    const handleChange = (e, setterFunction) => {
+        checkTokenAndAlert(); // Visa alert om token saknas
+        setterFunction(e.target.value); // Sätt värdet på tillståndet
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            alert('You must be logged in to add or edit an item. Click OK to go to the login page.');
+            return; // Avbryt om användaren inte är inloggad
+        }
+
         const newItem = { name, quantity, description, category };
         if (item) {
-            newItem.id = item.id
+            newItem.id = item.id;
         }
+
         console.log('Submitting item:', newItem); // Loggar item-objektet
         onSave(newItem);
+
         // Återställ tillståndet efter inskickning
         setName('');
         setQuantity('');
@@ -46,7 +73,7 @@ const ItemForm = ({ onSave, item = null }) => {
                                 id="name"
                                 type="text"
                                 value={name}
-                                onChange={(e) => setName(e.target.value)}
+                                onChange={(e) => handleChange(e, setName)}
                                 required
                             />
                         </div>
@@ -56,7 +83,7 @@ const ItemForm = ({ onSave, item = null }) => {
                                 id="quantity"
                                 type="number"
                                 value={quantity}
-                                onChange={(e) => setQuantity(e.target.value)}
+                                onChange={(e) => handleChange(e, setQuantity)}
                                 required
                             />
                         </div>
@@ -65,7 +92,7 @@ const ItemForm = ({ onSave, item = null }) => {
                             <select
                                 id="category"
                                 value={category}
-                                onChange={(e) => setCategory(e.target.value)}
+                                onChange={(e) => handleChange(e, setCategory)}
                                 required
                             >
                                 {categories.map((cat, index) => (
@@ -82,7 +109,7 @@ const ItemForm = ({ onSave, item = null }) => {
                             <textarea
                                 id="description"
                                 value={description}
-                                onChange={(e) => setDescription(e.target.value)}
+                                onChange={(e) => handleChange(e, setDescription)}
                                 required
                             />
                         </div>

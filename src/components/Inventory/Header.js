@@ -11,13 +11,13 @@ const Header = ({ onLogout }) => {
                 <div className={styles.logo}>
                     <Image
                         src="/images/Logo.png"
-                        alt="TechGear Electronics Logo"
+                        alt="Logo"
                         width={90}
                         height={90}
                     />
                 </div>
                 <div className={styles.companyName}>
-                    TechGear Electronics
+                    Logo
                 </div>
             </div>
 

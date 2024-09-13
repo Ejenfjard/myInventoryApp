@@ -117,15 +117,11 @@ const InventoryPage = () => {
 
 
     return (
-        <div>
+        <div className={styles.pageContainer}>
             <Header onLogout={handleLogout} />
             <main className={styles.mainContent}>
-                <div>
-                    <ItemForm item={selectedItem} onSave={handleSaveItem} />
-                </div>
-                <div>
-                    <ItemList items={items} onEdit={handleEdit} onDelete={handleDelete} />
-                </div>
+                <ItemForm item={selectedItem} onSave={handleSaveItem} />
+                <ItemList items={items} onEdit={handleEdit} onDelete={handleDelete} />
             </main>
         </div>
     );

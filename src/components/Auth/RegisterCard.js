@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import Link from 'next/link';
 import styles from '@/styles/AuthPage/AuthForm.module.css';
 
 const RegisterCard = ({ onSubmit, errorMessage, clearError }) => {
@@ -27,7 +28,12 @@ const RegisterCard = ({ onSubmit, errorMessage, clearError }) => {
                     </label>
                 </div>
                 {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+
+                <div className={styles.loginLink}>
+                    <p>Already have an account? <Link href="/login">Go to Login</Link></p>
+                </div>
                 <button type="submit" className={styles.submitButton}>Register</button>
+
             </form>
         </div>
     );
